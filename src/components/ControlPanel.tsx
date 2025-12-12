@@ -14,18 +14,20 @@ type SliderProps = {
 function Slider({ label, id, min, max, step, suffix }: SliderProps) {
   const val = useStore((s) => s.inputs[id]);
   const setInput = useStore((s) => s.setInput);
+  const inputId = `${id}-slider`;
   return (
     <div className="space-y-2">
-      <div className="flex justify-between text-sm">
+      <label className="flex justify-between text-sm" htmlFor={inputId}>
         <span>{label}</span>
         <span className="font-mono">
           {val}
           {suffix ?? ''}
         </span>
-      </div>
+      </label>
       <input
         className="w-full"
         type="range"
+        id={inputId}
         min={min}
         max={max}
         step={step}

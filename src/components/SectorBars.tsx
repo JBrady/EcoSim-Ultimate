@@ -1,4 +1,5 @@
 import { Outputs, Inputs } from '../types';
+import './SectorBars.css';
 
 function clamp(v: number, min: number, max: number) {
   return Math.min(max, Math.max(min, v));
@@ -21,16 +22,14 @@ export function SectorBars({ outputs, inputs }: { outputs: Outputs; inputs: Inpu
 
 function Sector({ label, score }: { label: string; score: number }) {
   const val = clamp(score, 5, 100);
-  const color = val < 30 ? 'bg-red-500' : val < 50 ? 'bg-yellow-500' : 'bg-emerald-500';
+  const color = val < 30 ? 'text-red-500' : val < 50 ? 'text-yellow-500' : 'text-emerald-500';
   return (
     <div className="space-y-1">
       <div className="flex justify-between text-xs text-slate-400">
         <span>{label}</span>
         <span className="font-mono text-white">{val.toFixed(1)}</span>
       </div>
-      <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-        <div className={`h-full ${color}`} style={{ width: `${val}%` }} />
-      </div>
+      <progress className={`sector-progress ${color}`} max={100} value={val} />
     </div>
   );
 }
