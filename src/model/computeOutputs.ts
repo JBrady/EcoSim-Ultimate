@@ -49,7 +49,7 @@ export function computeOutputs(inputs: Inputs, baseline: Baseline, coeffs: Coeff
   const medInfShock = d.drugCaps * coeffs.inf.drugCaps + d.healthSub * coeffs.inf.healthSub;
   const totalInfShock = genInfShock * 0.92 + medInfShock * 0.08;
 
-  const potentialGdp = 2.0 + d.mig * 0.25;
+  const potentialGdp = baseline.gdp + d.mig * 0.25;
   const actualGdp = baseline.gdp + gdpShock;
   const gap = actualGdp - potentialGdp;
   const unempShock = gap * coeffs.unempGap;

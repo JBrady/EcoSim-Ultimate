@@ -2,6 +2,7 @@ import { useStore } from '../state/store';
 import { Sparklines } from './Sparklines';
 import { NewsFeed } from './NewsFeed';
 import { SectorBars } from './SectorBars';
+import './Dashboard.css';
 
 export default function Dashboard() {
   const outputs = useStore((s) => s.outputs);
@@ -55,6 +56,7 @@ function Bar({
   suffix?: string;
 }) {
   const pct = Math.min(100, (value / max) * 100);
+  const widthClass = `bar-width-${Math.round(pct)}`;
   return (
     <div className="space-y-2">
       <div className="flex justify-between text-xs text-slate-400">
@@ -64,8 +66,8 @@ function Bar({
           {suffix ?? ''}
         </span>
       </div>
-      <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-        <div className={`h-full ${color}`} style={{ width: `${pct}%` }} />
+      <div className="bar-track">
+        <div className={`bar-fill ${color} ${widthClass}`} />
       </div>
     </div>
   );

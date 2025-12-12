@@ -5,4 +5,5 @@ dist
 *.local
 .env*
 legacy
+EcoSimUltimate.html
 
