@@ -1,0 +1,9 @@
+{
+  "yield10": { "rate": 0.6, "qt": -0.004, "spending": 0.1, "oil": 0.01 },
+  "gdp": { "spending": 0.4, "rate": -0.35, "qt": 0.005, "tariffs": -0.08, "corpTax": -0.04, "incTax": -0.15, "oil": -0.02, "mig": 0.4, "drugCaps": -0.02 },
+  "inf": { "spending": 0.2, "rate": -0.4, "qt": 0.005, "tariffs": 0.15, "mig": -0.15, "oil": 0.04, "incTax": -0.1, "drugCaps": -0.3, "healthSub": 0.1 },
+  "unempGap": -0.5,
+  "unins": { "healthSub": -0.8, "unemp": 0.3 },
+  "deficit": { "spending": 1, "healthSub": 0.04, "tariffs": -0.03, "corpTax": -0.05, "incTax": -0.12, "rate": 0.15 }
+}
+
